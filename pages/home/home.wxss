@@ -1,0 +1,5 @@
+/* pages/home/home.wxss */
+.kkk{
+  color: red;
+  background-color: aqua;
+}

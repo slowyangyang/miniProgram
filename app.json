@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/about/about"
+  ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页"
+    },{
+      "pagePath": "pages/about/about",
+      "text": "关于"
+    }]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小电影",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}
