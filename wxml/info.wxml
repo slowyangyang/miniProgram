@@ -1,0 +1,9 @@
+<template name="info">
+  <view>{{name}}</view>
+  <view>{{sex}}</view>
+  <view>{{age}}</view>
+</template>
+
+<template name="coder">
+  <view>this is coderd</view>
+</template>

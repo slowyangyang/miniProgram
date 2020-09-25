@@ -1,66 +1,44 @@
 // pages/home/home.js
+let name = getApp()
+console.log(name.globalData.say);
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    msg:'this is message'
+    msg:'this is message',
+    info:{
+      name:'小刚',
+      sex:"男",
+      age:12
+    },
+    count:0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  getinfo(event) {
+    console.log(event.detail);
+    
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handlertap(event) {
+    console.log(event);
+    // target:事件触发的元素
+    //currentTarget:事件绑定的元素
+    console.log(event.target.dataset.age);
+    console.log(this);
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  increment() {
+    this.setData({
+      count:this.data.count+1
+    })
+    console.log(this.selectComponent.data);
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  itemClick(event) {
+    console.log(event.detail);
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handelit() {
+    this.selectComponent("#sel").add(30)
+    
   }
+
 })

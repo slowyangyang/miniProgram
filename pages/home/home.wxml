@@ -1,3 +1,60 @@
 <!--pages/home/home.wxml-->
 <text>{{msg}}</text>
-<button class="kkk">按钮</button>
+<button class="kkk" 
+        open-type="getUserInfo"
+        bindgetuserinfo="getinfo">按钮
+</button>
+<!-- 展示用户信息，不用授权      -->
+<open-data type="userNickName"></open-data>
+<!-- 事件传递参数 -->
+<button size="mini" 
+        bind:tap="handlertap"
+        data-age="23">按钮</button>
+<!-- import引入外部模板 -->
+<import src="/wxml/info.wxml"/>
+<template is="info" data="{{...info}}"/>
+<template is="coder"/>
+
+<!-- template的基本使用 -->
+<template name="koka">
+        <view>哈哈哈</view>
+</template>
+<template is="koka"></template>
+<!-- wxs的使用 -->
+<!-- wxs不支持es6语法 -->
+<!-- wxs可以在wxml以标签对的形式书写定义，亦可以外部引入.wxs文件 -->
+<view>{{format.numFormat(25.66666666,2)}}</view>
+<wxs module="format">
+var numFormat = function (val,num) {
+        return val.toFixed(num)
+}
+module.exports = {
+        numFormat:numFormat
+}
+</wxs>
+<!-- wxs的外部引入 -->
+<wxs src="./home.wxs" module="dadel"/>
+<view>{{info.name}}</view>
+<!-- 自定义组件的基本使用 -->
+<my-cpn></my-cpn>
+<!--页面到组件的数据传递properties -->
+<my-prop title="微信小程序" title-class="red"></my-prop>
+<!--组件到页面的数据传递：发射事件triggerEvent-->
+<view>当前记数：{{count}}</view>
+<my-event bindincrement="increment"></my-event>
+<!--tab-control-->
+<tab-control titles="{{['小明','小刚','小红']}}" bind:itemClick="itemClick"></tab-control>
+<!--插槽的用法-->
+<my-mslot>
+<text slot="slot1">返回</text>
+<slider slot="slot2"></slider>
+<text slot="slot3">登录</text>
+</my-mslot>
+<!--父组件使用子组件的数据和方法-->
+<view>
+        <button class="btn"  size="mini" bind:tap="handelit">按钮+</button>
+</view>
+
+<my-sel id="sel"/>
+
+
