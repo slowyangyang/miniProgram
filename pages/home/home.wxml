@@ -1,3 +1,4 @@
 <!--pages/home/home.wxml-->
 <text>{{msg}}</text>
 <button class="kkk">按钮</button>
+<button size="mini" open-type="share">分享</button>
